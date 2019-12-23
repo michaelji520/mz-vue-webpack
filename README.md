@@ -1,5 +1,4 @@
-My Personal Webpack
-===================
+My Personal Vue Template
+========================
 
-This is a repository for practicing webpack config.
 

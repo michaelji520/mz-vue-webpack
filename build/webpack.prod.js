@@ -8,7 +8,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const PurgecssWebpackPlugin = require('purgecss-webpack-plugin'); // remove unused class
 const glob = require('glob');
-const AddAssetHtmlCdnWebpackPlugin = require('add-asset-html-cdn-webpack-plugin');
+// const AddAssetHtmlCdnWebpackPlugin = require('add-asset-html-cdn-webpack-plugin');
 // const SpeedMeasurePlugin = require('speed-measure-webpack-plugin'); // calculate operation time
 // const smp = new SpeedMeasurePlugin();
 // const Happypack = require('happypack');
@@ -21,11 +21,8 @@ const base = require('./webpack.base');
     app: path.resolve(__dirname, '../src/main.js')
   },
   output: {
-    filename: 'app.[contenthash].js',
+    filename: 'app.[hash:8].js',
     path: path.resolve(__dirname, '../dist')
-  },
-  externals: { // ignored libraries, load from cdn, doesn't pack
-    jquery: '$'
   },
   resolve: {
     alias: {
@@ -169,8 +166,5 @@ const base = require('./webpack.base');
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../dist')]
     }),
-    new AddAssetHtmlCdnWebpackPlugin(true, { // using this plugin would cause SpeedMeasurePlugin error, don't know why
-      jquery: 'https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js',
-    })
   ],
  });

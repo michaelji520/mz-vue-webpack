@@ -3,7 +3,7 @@ const DllPlugin = require('webpack/lib/DllPlugin');
 
 module.exports = {
   mode: 'production',
-  entry: ['vue', 'vue-router', 'vuex'],
+  entry: ['vue', 'vue-router', 'vuex'], // place dll moudles
   output: {
     filename: 'vue.dll.js',
     path: path.resolve(__dirname, '../dll'),

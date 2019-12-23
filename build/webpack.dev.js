@@ -73,12 +73,13 @@ module.exports = merge(base, {
       template: path.resolve(__dirname, '../public/index.html'),
       filename: 'index.html'
     }),
-    new DllReferencePlugin({
-      manifest: path.resolve(__dirname,'../dll/manifest.json')
-    }),
-    new AddAssetHtmlWebpackPlugin({ // NOTE: This plugin requires html-webpack-plugin@^2.10.0.
-      filepath: path.resolve(__dirname, '../dll/vue.dll.js')
-    }),
+    // uncomment following lines if you use dll
+    // new DllReferencePlugin({
+    //   manifest: path.resolve(__dirname,'../dll/manifest.json')
+    // }),
+    // new AddAssetHtmlWebpackPlugin({ // NOTE: This plugin requires html-webpack-plugin@^2.10.0.
+    //   filepath: path.resolve(__dirname, '../dll/vue.dll.js')
+    // }),
   ],
 });
 
