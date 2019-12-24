@@ -3,12 +3,13 @@ const merge = require('webpack-merge');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const base = require('./webpack.base');
-const DllReferencePlugin = require('webpack/lib/DllReferencePlugin');
-const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
+// const DllReferencePlugin = require('webpack/lib/DllReferencePlugin');
+// const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = merge(base, {
   mode: 'development',
+  devtool: 'eval-source-map',
   entry: {
     app: path.resolve(__dirname, '../src/main.js')
   },

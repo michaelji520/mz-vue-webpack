@@ -3,8 +3,7 @@
     ["@babel/preset-env", {
       "useBuiltIns": "usage", // trans apis, load on demand
       "corejs": 2 // babel-polyfill
-    }],
-    // "@babel/preset-typescript"
+    }]
   ],
   "plugins": [
     // analyse decorators

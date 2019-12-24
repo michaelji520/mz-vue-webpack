@@ -23,6 +23,7 @@ export default {
     };
   },
   mounted() {
+    console.error(111);
   }
 }
 </script>
